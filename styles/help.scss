@@ -1,0 +1,36 @@
+@import "index.scss";
+
+
+body{
+  background: #FFFFFF;
+  font-family:var(--primaryFont);
+  padding:10px 30px 10px 30px;
+}
+p {
+  text-align:justify;
+}
+pre,code {
+  background: #EEEEEE;
+  display: inline;
+}
+h2,h6{
+  background: var(--color2);
+  font-family:var(--primaryFont);
+}
+h3 {
+  background: var(--color1);
+  font-family:var(--primaryFont);
+  margin-top:10px;
+}
+.label {
+  background: var(--color4);
+  font-size:20px;
+  border-radius: 15px;
+  color: #000000; 
+  margin-right:10px;
+}
+#helpTitle {
+  background: var(--color3);
+  font-family:var(--primaryFont);
+}
+

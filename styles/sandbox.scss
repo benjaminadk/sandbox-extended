@@ -1,0 +1,215 @@
+@import "index.scss";
+
+//CSS SANDBOX OPTIONS
+.ui-slider {
+  background: var(--color4);
+}
+
+.ui-slider-handle {
+  background: var(--color1)!important;
+}
+
+.outlineToggle {
+  background: var(--color4);
+  width: 50%;
+  font-family:var(--primaryFont);
+  margin:0 auto;
+}
+
+#sandboxControls {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items:space-around;
+  flex-wrap:wrap;
+  height:90vh;
+  width: 30vw;
+  border: 1px solid #000000;
+  position: fixed;
+  top: 60px;
+  left: 10px;
+  overflow: auto;
+  background: #FFFFFF;
+  
+}
+
+.sandboxHeaderCont {
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  background: var(--color2);
+  height: 50px;
+  width: 100%;
+}
+
+.sandboxTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color1);
+  padding-bottom: 5px;
+  height:50px;
+  width: 100%;
+}
+
+.sandboxTitleText {
+  font-family: var(--primaryFont);
+  font-size: 30px;
+}
+
+.sandboxHeader {
+  font-size: 20px;
+  padding-top: 5px;
+  font-family: var(--primaryFont);
+}
+
+.sandboxItem{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding-top: 5px;
+  margin-left: 5px;
+  width:100%;
+}
+
+.sandboxItemCenter {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  width:100%;
+}
+
+#cssSandbox {
+  height: var(--height);
+  width: var(--width);
+  position: relative;
+  top: var(--top);
+  left: var(--left);
+  padding: var(--padding);
+  background-color: var(--sandboxColor);
+  opacity: var(--opacity);
+  box-shadow: var(--bsOffsetX) var(--bsOffsetY) var(--bsBlur) var(--bsColor);
+  border: var(--borderSize) var(--borderStyle) var(--borderColor);
+  border-radius: var(--borderRadius);
+  outline: var(--outlineSize) var(--outlineStyle) var(--outlineColor);
+  outline-offset: var(--outlineOffset);
+  transform: scale(var(--scale)) rotatex(var(--rotatex)) rotatey(var(--rotatey)) rotatez(var(--rotatez));
+  transition: all var(--transitionTime) cubic-bezier(var(--bez1),var(--bez2),var(--bez3),var(--bez4));
+  overflow: auto;
+  display: var(--boxDisplay);
+}
+
+#cssSandboxText {
+  font-size: var(--fontSize);
+  font-family:var(--primaryFont);
+  text-align: var(--textAlign);
+  line-height: var(--lineHeight);
+  letter-spacing: var(--letterSpacing);
+  color: var(--textColor);
+  text-shadow: var(--tOutline) 1px 0px 0px,
+ var(--tOutline) 0.540302px 0.841471px 0px,
+ var(--tOutline) -0.416147px 0.909297px 0px,
+ var(--tOutline) -0.989992px 0.14112px 0px,
+ var(--tOutline) -0.653644px -0.756802px 0px,
+ var(--tOutline) 0.283662px -0.958924px 0px,
+ var(--tOutline) 0.96017px -0.279415px 0px,
+ var(--tsOffsetX) var(--tsOffsetY) var(--tsBlur) var(--tsColor);
+  transition: all var(--transitionTime) cubic-bezier(var(--bez1),var(--bez2),var(--bez3),var(--bez4));
+}
+
+.labels {
+  font-family: var(--primaryFont);
+}
+
+.has-tip {
+  font-weight: normal;
+}
+
+.displayValue {
+  font-family: var(--primaryFont);
+  font-size: 12px;
+  margin-left: 10px;
+  background: var(--color1);
+  padding: 2px;
+}
+
+.cssSlider {
+  width:50%;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.jscolor {
+  width:55%;
+  margin-right: 5px;
+}
+
+#borderStyle,#outlineStyle,#textAlign,#fontFamily {
+  width: 50%;
+  margin-right: 10px;
+}
+
+select,option {
+  background-color: var(--color4);
+}
+select:focus {
+  background-color: var(--color4Focus);
+}
+
+#boxText {
+  width: 60%;
+  background-color: var(--color4);
+}
+
+#outlineToggle:hover {
+background: var(--color1);
+}
+
+#result {
+  background: #EEEEEE;
+  border: 5px outset #DDDDDD;
+}
+//ADVANCED OPTIONS
+.cssSliderVertical {
+  height: 75px;
+}
+
+#metaOptions {
+  height: 50vh;
+  width: 50vw;
+  overflow: auto;
+}
+
+.metaOptions,.codeDialog {
+  background: #FFFFFF;
+}
+
+.metaTitle,.codeTitle {
+  background: var(--color1);
+  font-family: var(--primaryFont);
+  font-size: 36px;
+}
+
+#bez4 {
+  margin-right: 5px;
+}
+
+#cubic {
+  margin-top: 10px;
+  font-family: var(--primaryFont);
+}
+
+
+
+
+

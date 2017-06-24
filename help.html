@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Sandbox - Help</title>
+  <link rel="icon" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1216298/cssSandbox20.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css">
+  <link rel="stylesheet" href="styles/help.processed.css">
+  <link href="https://fonts.googleapis.com/css?family=Righteous|Boogaloo|Frijole|Calligraffitti|Freckle+Face|The+Girl+Next+Door" rel="stylesheet">
+  <script src="https://use.fontawesome.com/e5ddde80f9.js"></script>
+</head>
+  
+<body>
+  <h1 id="helpTitle">CSS Sandbox Help</h1>
+  <h2>Table Of Contents</h2>
+  <ul id="helpNav"class="menu">
+  <li><a href="#gettingStarted"class="label">Getting Started</a></li>
+  <li><a href="#howToUse"class="label">How to Use CSS Sandbox</a></li>
+  <li><a href="#googleFonts"class="label">Google Fonts</a></li>
+  <li><a href="#twoVersions"class="label">Why 2 Versions?</a></li>
+  <li><a href="#example1"class="label">Slider Ball Explained</a></li><br>
+  <li><a href="#colorSelect"class="label">Color Select Explained</a></li>
+  <li><a href="#progressExample"class="label">ProgBall Explained</a></li>
+  <li><a href="#textOutlineHack"class="label">Text Outline Hack</a></li>
+  <li><a href="#matrix"class="label">Returned CSS says transform: matrix3d?</a></li>
+  </ul>
+  
+  <h3 id="getStarted">Getting Started</h3>
+  <p>Hello! and welcome to <strong>CSS Sandbox</strong>(<strong>The Box</strong>).  First and foremost, <strong>The Box</strong> is a learning resource.  Whether you are just beginning your coding journey, like I am, and even if you have some time under your belt, I guarentee <strong>The Box</strong> has something to teach you.  I have dug deep and done my due diligence in terms of researching <em>css variables</em> and lesser known css in general.</p>
+  <p>A good place to start is with the cards on the landing page.  Each card contains a little bit of CSS magic.  You will find tutorial style videos linked in underneath some of the examples.  Watch these to get a feel for what this site is all about.</p>
+  <a href="#helpTitle"class="label">Back that thang up</a>
+  
+  <h3 id="howToUse">How to Use CSS Sandbox</h3>
+  <h6>Step 1</h6>
+  <p>Using <strong>The Box</strong> is simple.  Once you are in the Sandbox page you will see a column titled "Sandbox Options".  There is also a small box with the text "CSS Sandbox!".  Within the options box there are all kinds of CSS properties.  Sometimes there is a slider next to the property, sometimes there is a menu with options or even a text field you fill in.  To start with, just play around with some of the sliders and watch the box.  Everything you do with the sliders affects the box's CSS property with the slider name.  You can change everything!.</p>
+  <h6>Step 2</h6>
+  <p>Once you get the hang of everything you can create a simple <pre><code>&lt;div&gt;</code></pre> element with a <pre><code>&lt;p&gt;</code></pre> inside of it.  It is basically a headline or a paragraph, depending on what size and layout choices you make.  Once you have something you like you have the option of getting the <strong>HTML and CSS</strong> code for what you made!  Just press the "Show Code" button.  Now you can copy and paste the code into your project.</p>
+  <p>Even if you don't use what you make, looking at the code can give you ideas for the future.  Maybe you will discover some CSS that you didn't know about.  Hopefully, you had a good time no matter what you use <strong>The Box</strong> for.</p>
+  <h6>Step 3</h6>
+  <p>Take it to the next level by going to "Advanced Options".  Just click the button with the <i class="fa fa-cog" aria-hidden="true"></i>.  Now you can control the transitions that the little box makes when you change something.  You will also have access to the site color theme.  Just another fun thing to play around with.</p>
+  <h6>Step 4</h6>
+  <p>You can actually enter HTML and inline CSS(and Javascript) into the text input box. It is a bit awkward due to lack of space, but it is neat to play around with. You also have access to Foundation classes like 'label' and 'badge'.  These won't show up in the code reveal but you can just copy and paste your own code.  And chances are if you are at a level where you are entering inline code you are probably don't need the code reveal feature anyhow.</p>
+  <a href="#helpTitle"class="label">Back that thang up</a>
+  
+  <h3 id="googleFonts">Google Fonts</h3>
+  <p>I have included a few Google Fonts.  These won't automatically be included in your page if you copy and paste the code reveal.  In order to use <a href="https://fonts.google.com/" target="_blank" class="label">Google Fonts</a> you need to go their website and follow some simple instructions to import the fonts you need into your project</p>
+  <a href="#helpTitle"class="label">Back that thang up</a>
+  
+  <h3 id='twoVersions'>Why are there two versions of this site?</h3>
+  <p>The first version, which you can find <a href="https://benjaminadk.github.io/css-sandbox/index.html" target="_blank" class="label">HERE</a> was built entirely with vanilla javascript and minimal styling.  This version utilizes the Jquery and Jquery UI libraries, as well as Foundation.  Honestly, I feel like I can make a more complete and purposeful site my expanding the original idea.  Using the libraries only streamines the process.  Plus, it's fun to play with all the sliders.</p>
+  <p>If I am being completely honest, this version of the site was a lot more work.  Because of the way I used Jquery UI to initialize the sliders, I was unable to use the same javascript I did in the first version.  This amounted to hundreds of extra lines of code, to initialize each jquery slider, one at a time, each with a full options object.  Was it worth it?  Honestly, I am not sure.
+    <a href="#helpTitle"class="label">Back that thang up</a>
+
+  <h3 id="example1">Slider Ball Explained</h3>
+  <p>This explanation refers to the <strong>Slider and Ball</strong> example on the landing page.  First off, the ball is nothing more than a "div" element with <pre><code>border-radius: 50% and position: relative</code></pre></p><p>  I first assign a css variable to the "left" css property of the div.  I then define the variable globally at the top of my css stylesheet, assigning it to the ":root" selector.  This is a little trick that essentially makes any variable global.</p>
+  <p>I then assign the proper initial value to the variable that positions the div where I want it.  Finally, I attach an event listener to the nearby slider and set the slider's value equals to css variable I made earlier.  The event listener allows us to be updated upon any change in the slider's value.  Defining a "transition" on the moving div helps smooth out the animation.  Also, alligning the inital left value with the slider's minimum value and making sure the slider's maximum value doesn't position our div in an undesireable place are key steps you won't want to skip.</p>
+  <a href="#helpTitle"class="label">Back that thang up</a>
+  
+  <h3 id="colorSelect">Color Game Explained</h3>
+  <p>Over the course of designing this site, this feature evolved into what it is now.  At first it was a text input for one box, just to show how a css variable can be assigned on the fly.  Then I deceded to go a step or two further and make a game out of it.  Now, in my eyes, that little game almost outshines the sandbox </p>
+  <p>By simply passing around the variable and its properties, the you will receive instant feedback and maybe learn a color or two in the process.  I am planning a tutorial in the near future and I will update this section when I do.</p>
+  <a href="#helpTitle"class="label">Back that thang up</a>
+  
+  <h3 id="progressExample">The Progress Ball</h3>
+    <p>This explanation gets a little verbose, as they say.  I am attaching a link to a video series I made that details the build process for this element.  There is a lot of fancy css combined with a timing function.  To see a step by step guide, check out <a href="https://www.youtube.com/watch?v=EGWsI0fSbPE&list=PLh6ckU65UHas179cLfp-hb040z7peXCA0&index=2" target="_blank" class="label">this You Tube video series</a></p>
+    <a href="#helpTitle"class="label">Back that thang up</a>
+
+<h3 id="textOutlineHack">Text Outline Hack</h3>
+<p>You may have noticed the option for Text Outline Color, as well as the toggle button.  The fact is that this isn't an official CSS property.  The effect is the result of a few small text shadows chained together.  If you bring up the code reveal you can see for yourself.  I found this<a href="http://owumaro.github.io/text-stroke-generator/" target="_blank" class='label'>Text Outline Hack Site</a> and decided to include the trick just for fun.  The site will give you the exact numbers you need for your specific text size and font-family.  Pretty Cool stuff.</p>
+<a href="#helpTitle"class="label">Back that thang up</a>
+
+<h3 id="matrix">My returned CSS says transform: matrix3d</h3>
+<p>You might have noticed that the returned CSS for your box only has one transform applied, and that transform is matrix3d.  This is because of how the program retrieves the CSS information.  It uses jquery to fetch the CSS properties, and in that process all the transforms get lumped into one big matrix3d transform.  At this stage, I haven't learned enough to be able to break that down into individual transforms.  I also haven't looked into other ways to get the CSS reveal to show your individual transforms.  At some point in the future I may tackle this issue.  For now, know that the matrix3d transform will do the same thing as your individual transforms.  Also, you have the values of each seperate transform on display in Sandbox options.  If you need the code you can always just apply what you see there.</p>
+<a href="#helpTitle"class="label">Back that thang up</a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/js/foundation.min.js"></script>
+</body>
+</html>

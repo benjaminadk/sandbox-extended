@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS Sandbox - Sandbox</title>
+  <link rel="icon" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1216298/cssSandbox20.png" type="image/x-icon">
+  
+  <!--  Styles  -->
+  <link href="https://fonts.googleapis.com/css?family=Righteous|Boogaloo|Frijole|Calligraffitti|Freckle+Face|The+Girl+Next+Door" rel="stylesheet">
+ 
+ <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css">
+  <link rel="stylesheet" href="styles/sandbox.processed.css">
+  <script src="https://use.fontawesome.com/e5ddde80f9.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1216298/jscolor.min.js"></script>
+  
+</head>
+<body>
+  <!--NAVIGATION BAR-->
+  <header id="header">
+    <nav id='navWrap'>
+      <div class="flex">
+        <div class="white">
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1216298/cssSandbox50.png"/>
+          </div>
+      <a href="index.html"><h3 id='navTitle'class="navLink">CSS Sandbox</h3></a>
+        </div>
+      <ul id="navList" class="flex">
+        <li class='navLink'><a href="#">Sandbox</a></li>
+        <li class='navLink'><a href="index.html" target="_blank">Home</a></li>
+        <li class='navLink'><a href="resources.html" target="_blank">Resources</a></li>
+        <li class='navLink'><a href="help.html" target="_blank">Help</a></li>
+        </ul>
+      </nav>
+    </header>
+ 
+  <main>
+    <!--SANDBOX CONTROLS-->
+    <div id='sandboxControls'>
+      
+      <div class="sandboxTitle">
+        <h3 class="sandboxTitleText">Sandbox Options</h3>
+        </div>
+      
+      <div class="sandboxItemCenter">
+        <div id="metaButton" class="has-tip" data-tooltip title="Open Advanced Options"></div>
+        <div id="showCode" class="has-tip" data-tooltip title="Show HTML and CSS Code"></div>
+        <a href="help.html"target="_blank"><div id="helpButton" class="has-tip" data-tooltip title="Open Help Page"></div></a>
+
+        </div>
+      
+      <div class='sandboxHeaderCont'>
+        <h3 class="sandboxHeader">Position & Dimension</h3>
+        </div>
+        
+        <div class="sandboxItem">
+          <span class="labels">Height<span id="heightDisplay" class="displayValue">100px</span></span>
+        <div id='height' class="cssSlider">
+        </div>
+          </div>
+
+        <div class="sandboxItem">
+          <span class="labels">Width<span id="widthDisplay" class="displayValue">100px</span></span>
+        <div id='width' class="cssSlider">
+        </div>
+          </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Top<span id="topDisplay" class="displayValue has-tip" title="vh units refer to viewport height">50vh</span></span>
+        <div id='top' class="cssSlider">
+        </div>
+          </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Left<span id="leftDisplay" class="displayValue has-tip" title="vw units refer to viewport width">50vw</span></span>
+        <div id='left' class="cssSlider">
+        </div>
+          </div>
+      
+      <div class="sandboxItem spacerSmallB">
+          <span class="labels">Padding<span id="paddingDisplay" class="displayValue">0px</span></span>
+        <div id='padding' class="cssSlider">
+        </div>
+          </div>
+      
+      <div class='sandboxHeaderCont'>
+        <h3 class="sandboxHeader">Transformations</h3>
+        </div>
+        
+         <div class="sandboxItem">
+          <span class="labels">Scale<span id="scaleDisplay" class="displayValue has-tip" title="Be careful with this one!">1.00</span></span>
+        <div id='scale' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Rotate X<span id="rotateXDisplay" class="displayValue has-tip" title="Rotates around the X axis">0deg</span></span>
+        <div id='rotateX' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Rotate Y<span id="rotateYDisplay" class="displayValue has-tip" title="Rotates around the Y axis">0deg</span></span>
+        <div id='rotateY' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Rotate Z<span id="rotateZDisplay" class="displayValue has-tip" title="Rotates around the Z axis">0deg</span></span>
+        <div id='rotateZ' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem spacerSmallB">
+          <span class="labels has-tip" title="Let's Twist Again, Like We Did Last Summer">Twist-a-Matic</span>
+        <div id='twist' class="cssSlider">
+        </div>
+        </div>
+      
+      
+      <div class='sandboxHeaderCont'>
+        <h3 class="sandboxHeader">Color & Shadow</h3>
+        </div>
+      
+      <!--FONT-COLOR-->
+      <div class="sandboxItem spacerSmall spacerSmallB">
+          <span class="labels">Box Color 1</span>
+        <input class="jscolor" value="#FFFFFF" id="sandboxColor"/>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Text Color</span>
+        <input class="jscolor" value="#000000" id="sandboxTextColor"/>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Opacity<span id="opacityDisplay" class="displayValue">1.00</span></span>
+        <div id='opacity' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Box Shadow X<span id="boxShadowXDisplay" class="displayValue">0px</span></span>
+        <div id='bsOffsetX' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Box Shadow Y<span id="boxShadowYDisplay" class="displayValue">0px</span></span>
+        <div id='bsOffsetY' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Box Shadow Blur<span id="boxShadowBDisplay" class="displayValue">0px</span></span>
+        <div id='bsBlur' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Shadow Color</span>
+        <input class="jscolor" value="#000000" id="bsColor"/>
+        </div>
+      
+       <div class="sandboxItem">
+          <span class="labels">Text Shadow X<span id="textShadowXDisplay" class="displayValue">0px</span></span>
+        <div id='tsOffsetX' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Text Shadow Y<span id="textShadowYDisplay" class="displayValue">0px</span></span>
+        <div id='tsOffsetY' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Text Shadow Blur<span id="textShadowBDisplay" class="displayValue">0px</span></span>
+        <div id='tsBlur' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Shadow Color</span>
+        <input class="jscolor" value="#000000" id="tsColor"/>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Text Outline Color</span>
+        <input class="jscolor" value="transparent" id="tOutline"/>
+        </div>
+      
+      <div class="sandboxItem spacerSmallB">
+        <div id="outlineToggle"></div>
+        </div>
+      
+      <!--TEXT PROPERTIES-->
+      <div class='sandboxHeaderCont'>
+        <h3 class="sandboxHeader">Text Properties</h3>
+        </div>
+      
+       <div class="sandboxItem">
+          <span class="labels">Text Content</span>
+        <input type="text" value="CSS Sandbox!" id="boxText"/>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Font Size</span>
+        <div id='fontSize' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem spacerSmall">
+      <label for="fontFamily" class="labels">Font Family:</label>
+<select name="borderStyle" id="fontFamily" onclick="fontFamilySet()">
+  <optgroup label="Basic Fonts">
+  <option value="Arial">Arial</option>
+  <option value="Times New Roman">Times New Roman</option>
+  <option value="Comic Sans MS">Comic Sans MS</option>
+  <option value="Roboto">Roboto</option>
+  <option value="Arial Black">Arial Black</option>
+    </optgroup>
+  <optgroup label="Google Fonts">
+  <option value="Righteous" selected>Righteous</option>
+  <option value="Boogaloo">Boogaloo</option>
+  <option value="Frijole">Frijole</option>
+  <option value="Calligraffitti">Calligraffitti</option>
+  <option value="Freckle Face">Freckle Face</option>
+  <option value="The Girl Next Door">The Girl Next Door</option>
+    </optgroup> 
+</select>
+ </div>
+      
+      <div class="sandboxItem spacerSmall">
+      <label for="textAlign" class="labels">Text Align:</label>
+<select name="textAlign" id="textAlign" onclick="alignText()">
+  <optgroup label="Text Align Options">
+  <option value="left" selected>Left</option>
+  <option value="center">Center</option>
+  <option value="right">Right</option>
+  <option value="justify">Justify</option>
+  <option value="justify-all">Justify-All</option>
+    </optgroup>
+  </select>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Line Height</span>
+        <div id='lineHeight' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Letter Spacing</span>
+        <div id='letterSpacing' class="cssSlider">
+        </div>
+        </div>
+      
+      <!--BORDER AND OUTLINE-->
+      <div class='sandboxHeaderCont'>
+        <h3 class="sandboxHeader">Border and Outline</h3>
+        </div>
+      
+      <div class="sandboxItem spacerSmall">
+      <label for="borderStyle" class="labels">Border Style:</label>
+<select name="borderStyle" id="borderStyle" onclick="borderStyleSet()">
+  <optgroup label="Simple">
+  <option value="none">None</option>
+  <option value="solid" selected>Solid</option>
+  <option value="double">Double</option>
+  <option value="dotted">Dotted</option>
+  <option value="dashed">Dashed</option>
+    </optgroup>
+  <optgroup label="Cooler">
+  <option value="inset">Inset</option>
+  <option value="outset">Outset</option>
+  <option value="groove">Groove</option>
+  <option value="ridge">Ridge</option>
+    </optgroup> 
+</select>
+ </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Border Color</span>
+        <input class="jscolor" value="#000000" id="borderColor"/>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Border Size</span>
+        <div id='borderSize' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Border Radius</span>
+        <div id='borderRadius' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem spacerSmall">
+      <label for="outlineStyle" class="labels">Outline Style:</label>
+<select name="outlineStyle" id="outlineStyle" onclick="outlineStyleSet()">
+  <optgroup label="Simple">
+  <option value="none" selected>None</option>
+  <option value="solid">Solid</option>
+  <option value="double">Double</option>
+  <option value="dotted">Dotted</option>
+  <option value="dashed">Dashed</option>
+    </optgroup>
+  <optgroup label="Cooler">
+  <option value="inset">Inset</option>
+  <option value="outset">Outset</option>
+  <option value="groove">Groove</option>
+  <option value="ridge">Ridge</option>
+    </optgroup> 
+</select>
+ </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Outline Color</span>
+        <input class="jscolor" value="#000000" id="outlineColor"/>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Outline Size</span>
+        <div id='outlineSize' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Outline Offset</span>
+        <div id='outlineOffset' class="cssSlider">
+        </div>
+        </div>
+  
+    </div><!--END OF SANDBOX CONTROLS-->
+    
+    <!--THE SANDBOX ITSELF-->
+    <div id="cssSandbox">
+      <p id="cssSandboxText">CSS Sandbox!<p>
+      </div>
+    
+    <!--ADVANCED SETTINGS-->
+    <div id="metaOptions" title="Advanced Options">
+      
+      <div class='sandboxHeaderCont'>
+        <h3 class="sandboxHeader">Transition Options</h3>
+        </div>
+      
+      <div class="sandboxItem">
+          <span class="labels">Transition Duration</span>
+        <div id='transitionTime' class="cssSlider">
+        </div>
+        </div>
+      
+      <div class="sandboxItem spacerSmall">
+          <span class="labels">Transition Timing</span>
+        <div id="bez1" class="cssSliderVertical"></div>
+        <div id="bez2" class="cssSliderVertical"></div>
+        <div id="bez3" class="cssSliderVertical"></div>
+        <div id="bez4" class="cssSliderVertical"></div>
+        </div>
+      
+      <div class="sandboxItem">
+      <p id="cubic">Cubic Bezier: ( <span id='cb1'>0.00</span>, <span id='cb2'>0.00</span>, <span id='cb3'>1.00</span>, <span id='cb4'>1.00</span> )</p>
+      </div>
+      
+      <div class="sandboxItemCenter">
+ <div id='bezierHelpButton' class="has-tip" data-tooltip title="Cubic Bezier Help" data-hover-delay="2000ms" data-fade-in-duration="2000ms"></div>
+   <div id="bezierHelpDialog" title="What is a Cubic Bezier?">
+  </div>   
+        </div>
+      <div class="sandboxItem">
+        <span class="navLink"><a href="http://cubic-bezier.com/#0,0,1,1"target="_blank">Cubic Bezier Interactive Site</a></span>
+        </div>
+      
+      <div class='sandboxHeaderCont'>
+        <h3 class="sandboxHeader">Site Colors</h3>
+        </div>
+      
+      <div class="sandboxItem spacerSmall">
+        <span class="labels">Color 1</span>
+      <input class="jscolor" value="#F2E89C" id="color1"/>
+      </div>
+      
+      <div class="sandboxItem">
+        <span class="labels">Color 2</span>
+      <input id="color2" class="jscolor" value="#97DBA2">
+      </div>
+      
+      <div class="sandboxItem">
+        <span class="labels">Color 3</span>
+      <input value="#7AB4E4" id="color3" class="jscolor">
+      </div>
+      
+      <div class="sandboxItem">
+        <span class="labels">Color 4</span>
+      <input class="jscolor" value="#a8eaf4" id="color4"/>
+      </div>
+      
+      <div class="sandboxItem">
+        <span class="labels">Color 4(focus)</span>
+      <input class="jscolor" value="#7AB4E4" id="color4Focus"/>
+      </div>
+      
+      <div class="sandboxItem">
+        <span class="labels">Background</span>
+      <input value="#FFFFFF" id="bgColor" class="jscolor">
+      </div>
+      
+      <div class="sandboxItem">
+        <span class="labels">Text</span>
+      <input value="#000000" id="textColor" class="jscolor">
+      </div>
+      
+      <div class='sandboxHeaderCont'>
+        <h3 class="sandboxHeader">Box Display Options</h3>
+        </div>
+      
+      <div class="sandboxItem">
+      <label for="boxDisplay" class="labels">Display:</label>
+<select name="boxDisplay" id="boxDisplay" onclick="boxDisplaySet()">
+  <optgroup label="Display Types">
+  <option value="block"selected>Block</option>
+  <option value="inline">Inline</option>
+  <option value="flex">Flex</option>
+  <option value="dotted">Inline-Flex</option>
+  <option value="dashed">Inline-Block</option>
+         </optgroup>
+  </select>
+      
+      </div><!--END OF ADVANCED OPTIONS-->
+    
+    <!--CODE REVEAL FOR CUSTOM BOX-->
+    <div id="code" title="HTML & CSS">
+      <p id="result"></p>
+      </div>
+    
+    </main>
+  
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/js/foundation.min.js"></script>
+  
+  <script src="scripts/sandbox.js"></script> 
+</body>
+</html>

@@ -1,0 +1,365 @@
+//UNIVERSAL CSS RULES
+:root{
+  //GLOBAL CSS PAGE STYLE
+  --primaryFont: "Righteous",Arial,sans-serif;
+  --textColorBody: #000000;
+  --bgColorBody: #E3F3F5;
+  --color1: #F2E89C;
+  --color2: #97DBA2;
+  --color3: #7AB4E4;
+  --color4: #a8eaf4;
+  --color4Focus:#7AB4E4;
+  --box1Left: 30px;
+  --col2BoxColor: #FFFFFF;
+  --bs: dashed;
+  --col2Random: #FFFFFF;
+  //ADVANCED CSS SANDBOX OPTIONS
+  --transitionTime: 2s;
+  --bez1: 0;
+  --bez2: 0;
+  --bez3: 1;
+  --bez4: 1;
+  --boxDisplay: block;
+  //REGULAR CSS SANDBOX OPTIONS
+  --height: 100px;
+  --width: 100px;
+  --top: 50vh;
+  --left: 50vw;
+  --padding: 0px;
+  --scale: 1;
+  --rotatex: 0;
+  --rotatey: 0;
+  --rotatez: 0;
+  --sandboxColor: #FFFFFF;
+  --opacity: 1;
+  --bsOffsetX: 0;
+  --bsOffsetY: 0;
+  --bsBlur: 0;
+  --bsColor: #000000;
+  --borderStyle: solid;
+  --borderColor: #000000;
+  --borderSize: 1px;
+  --borderRadius: 0%;
+  --outlineSize: 0px;
+  --outlineStyle: none;
+  --outlineColor: #000000;
+  --outlineOffset: 0px;
+  //CSS SANDBOX TEXT OPTIONS
+  --textSize: 16px;
+  --textAlign: left;
+  --lineHeight: 1;
+  --letterSpacing: 1;
+  --textColor: #000000;
+  --tOutline: transparent;
+  --tsOffsetX: 0;
+  --tsOffsetY: 0;
+  --tsBlur: 0;
+  --tsColor: #000000;
+}
+
+body{
+  background: var(--bgColorBody);
+  color: var(--textColorBody)
+}
+.flex {
+  display: flex;
+}
+
+.white {
+  background: #FFFFFF;
+  margin-left:10px;
+}
+
+.centerImg {
+  display: flex;
+  justify-content:center;
+}
+#arrowWrap {
+  margin:0 auto;
+}
+
+.spacer{
+  margin-top: 47px;
+}
+
+.spacer2 {
+  margin-bottom: 50px;
+}
+
+.spacerSmall {
+  margin-top: 10px;
+}
+
+.spacerSmallB {
+  margin-bottom: 10px;
+}
+
+.card-divider {
+  background: var(--color3);
+}
+
+//LANDING PAGE CSS
+#landing {
+  display:flex;
+  flex-direction:column;
+  height: 100vh;
+  width: 100vw;
+  background: #FFFFFF;
+  
+}
+
+#title {
+  font-family:var(--primaryFont);
+  font-size: 150px;
+  text-align: center;
+  padding-top:50px;
+}
+
+#subTitle {
+  font-size: 80px;
+  font-family:var(--primaryFont);
+  text-align: center;
+}
+
+.center20 {
+  font-family: var(--primaryFont)!important;
+  font-size: 20px;
+  text-align: center;
+}
+
+#navWrap {
+  height: 50px;
+  background: var(--color3);
+  display:flex;
+  justify-content:space-between;
+  position: fixed;
+  width:100%;
+}
+
+#navTitle{
+  text-align: left;
+  font-family: var(--primaryFont);
+  font-size: 20px;
+  line-height:2;
+  margin-left: 20px;
+}
+
+#navList {
+  list-style:none;
+}
+
+.navLink>a {
+  margin-right: 20px;
+  line-height: 3;
+  color:var(--textColorBody);
+  background: var(--color4);
+  font-family:var(--primaryFont);
+  border-radius:10px;
+  text-align: center;
+  padding: 3px 10px 3px 10px;
+  
+}
+
+.navLink>a:hover,#helpNav>li>a:hover {
+  background: var(--color1);
+  transition: background .1s linear .4s;
+  color:var(--textColorBody);
+  cursor:pointer;
+  
+}
+
+li{
+  transform: rotate(0deg);
+}
+li:hover{
+  transform: rotatex(360deg);
+  transition: all .5s linear;
+}
+
+#col1Box {
+  height: 30px;
+  width: 30px;
+  position: relative;
+  top: -30px;
+  left: var(--box1Left);
+  border-radius: 50%;
+  background: var(--color1);
+  transition: all .25s linear;
+}
+
+.colButton {
+  background: var(--color4);
+  width: 50px;
+  height: 35px;
+}
+
+.box1Slider {
+  background: var(--color2);
+}
+
+.box1Handle {
+  background: var(--color1)!important;
+}
+
+#col2Box {
+  width: 60px;
+  height: 60px;
+  background: var(--col2BoxColor);
+  margin:3px auto 12px;
+  border-style: var(--bs);
+}
+
+#col2Random {
+  width: 60px;
+  height: 60px;
+  background: var(--col2Random);
+  margin:3px auto 12px;
+}
+
+#guess{
+  font-family:var(--primaryFont);
+}
+
+#col2 {
+  font-family: var(--primaryFont);
+}
+
+.col2Button {
+  background: var(--color2);
+  height: 35px;
+  font-family:var(--primaryFont);
+  color: grey;
+}
+
+.colButton:active,.col2Button:active{
+  background: rgb(37, 34, 114);
+}
+.colButton:hover,.col2Button:hover{
+  background: var(--color1);
+}
+
+.ui-dialog{
+  background: #000000;
+}
+
+.ui-dialog-titlebar {
+  background: var(--color2);
+}
+
+//PROGRESS BALL CSS MESS
+progress{
+  appearance:none;
+  -webkit-appearance:none;
+  height:45px;
+  width: 45px;
+  position: relative;
+  left: 40%;
+  overflow:hidden;
+  transform:rotate(270deg)scale(2);
+  z-index:0;
+  border-radius:50%;
+  margin:30px 0 30px 0;
+}
+
+::-webkit-progress-bar{
+  border-radius:70px;
+  background-color:white;
+}
+
+::-webkit-progress-value{
+  border-radius:70px 0 0 70px;
+  background-color: var(--color1);
+}
+
+.boom {
+  animation-name: boom;
+  animation-delay:1s;
+  animation-duration:3s;
+  animation-direction:forwards;
+  animation-iteration-count:1;
+  animation-timing-function: linear;
+}
+@keyframes boom {
+  0%{transform:scale(2);}
+  25%{transform:scale(20);}
+  50%{opacity:0;}
+  100%{transform:scale(2);opacity:1;}
+}
+
+#uglyColors{
+  width: 150px;
+  background:rgb(224, 224, 224); 
+  border-radius:20px;
+  text-align: center;
+}
+
+footer {
+  height:13vh;
+  background: var(--color3);
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#socialMedia {
+  list-style: none;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-top: 15px;
+}
+
+.socialLink>a>img {
+  margin-right: 10px;
+}
+#github,#twitter,#facebook,#youtube{
+  transition:all 1s linear;
+}
+#github:hover{
+  background: violet;
+  border-radius:15px;
+}
+#facebook:hover{
+  background: rgb(36, 83, 214);
+  border-radius: 15px;
+}
+#twitter:hover{
+  background: rgb(25, 193, 255);
+  border-radius: 15px;
+}
+#youtube:hover{
+  background: #CC181E;
+  border-radius: 15px;
+}
+
+#homeBread {
+  font-family: var(--primaryFont);
+}
+
+#copy{
+ margin-right: 30px;
+ font-family: var(--primaryFont);
+}
+
+//FONT AWESOME BUTTON HACK..JQUERY ICONS MEH...
+.ui-icon[class*=" fa-"] {
+    background: none repeat scroll 0 0 transparent;
+    text-indent: 0; 
+    margin-top: -0.5em;
+}
+
+.ui-button-icon-only .ui-icon[class*=" fa-"] {
+    margin-left: -7px;
+}
+
+.ui-icon.icon-large {
+    margin-top: -0.75em;
+}
+//HACK FONT AWESOME ICONS SO THEY LOOK OK
+.fa-youtube,.fa-lightbulb-o,.fa-link,.fa-gear,.fa-question,.fa-refresh{
+  transform: scale(1.55) translatey(2px);
+}
+.fa-code {
+  transform: scale(1.4) translatey(2px);
+}
